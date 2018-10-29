@@ -89,8 +89,7 @@ public class AvatarView extends View {
         options.inDensity = options.outWidth;
         options.inTargetDensity = width;
 
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.mipmap.idea2,options);
+        return BitmapFactory.decodeResource(getResources(),R.mipmap.idea2,options);
 
-        return bitmap;
     }
 }
