@@ -38,9 +38,6 @@ public class SportsView extends View {
         paint.setStyle(Paint.Style.STROKE);
         paint.setColor(Color.parseColor("#ef5b9c"));
 
-        // 字体大小
-        paint.setTextSize(ResourcesHelp.dp2px(50));
-        paint.setTextAlign(Paint.Align.CENTER);
     }
 
     @Override
@@ -54,7 +51,7 @@ public class SportsView extends View {
         // 绘制进度条
         paint.setColor(Color.parseColor("#d71345"));
         // 环 圆角处理  BUTT ROUND  SQUARE
-        paint.setStrokeCap(Paint.Cap.SQUARE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
         canvas.drawArc(getWidth() / 2 - RADIUS, getHeight() / 2 - RADIUS,
                 getWidth() / 2 + RADIUS, getHeight() / 2 + RADIUS,
                 -90, 300, false, paint);
@@ -64,7 +61,14 @@ public class SportsView extends View {
         canvas.drawLine(0, getHeight() / 2, getWidth(), getHeight() / 2, paint);
         // 绘制文字
         paint.setStyle(Paint.Style.FILL);
+        // 字体大小
+        paint.setTextSize(ResourcesHelp.dp2px(50));
+        paint.setTextAlign(Paint.Align.CENTER);
+        // 文字纵向测量居中 方式一
         float offset = (fontMetrics.ascent + fontMetrics.descent) / 2;
-        canvas.drawText("运动环", getWidth() / 2, getHeight() / 2 - offset, paint);
+
+        // 方式二
+        paint.getTextBounds("运动环",0,"运动环".length(),rect);
+        canvas.drawText("运动环", getWidth() / 2, getHeight() / 2, paint);
     }
 }
