@@ -53,8 +53,8 @@ public class SportsView extends View {
 
         // 绘制进度条
         paint.setColor(Color.parseColor("#d71345"));
-        // 环 圆角处理
-        paint.setStrokeCap(Paint.Cap.ROUND);
+        // 环 圆角处理  BUTT ROUND  SQUARE
+        paint.setStrokeCap(Paint.Cap.SQUARE);
         canvas.drawArc(getWidth() / 2 - RADIUS, getHeight() / 2 - RADIUS,
                 getWidth() / 2 + RADIUS, getHeight() / 2 + RADIUS,
                 -90, 300, false, paint);
