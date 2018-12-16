@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'io.objectbox' // apply last
 
 android {
     compileSdkVersion 28
@@ -29,4 +30,7 @@ dependencies {
 
     // 时间选择器
     implementation 'com.contrarywind:Android-PickerView:4.1.6'
+
+    // objectBox 数据库
+    implementation 'io.objectbox:objectbox-android:2.2.0'
 }

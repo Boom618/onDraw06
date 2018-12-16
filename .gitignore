@@ -27,3 +27,5 @@ hs_err_pid*
 app/app.iml
 .gradle/*
 .idea/*
+local.properties
+app/app.iml
